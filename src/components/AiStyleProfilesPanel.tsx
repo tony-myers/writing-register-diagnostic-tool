@@ -161,7 +161,7 @@ export function AiStyleProfilesPanel({
           <p>{aiStyleNonDetectionWording}</p>
           <p className="ai-methods-link">
             <a href={aiProfileMethodsUrl} target="_blank" rel="noreferrer">
-              How the AI-style comparison profiles were constructed
+              How this tool's AI-style comparison profiles were constructed
             </a>
           </p>
         </div>
