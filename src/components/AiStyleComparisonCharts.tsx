@@ -42,9 +42,15 @@ const shortMetricLabels: Record<string, string> = {
   article_opener: "Article openers",
   hedge_rate: "Hedges",
   sentence_length_sd: "Sentence SD",
-  type_token_ratio: "TTR",
+  type_token_ratio: "Vocabulary ratio",
   paragraph_mean_words: "Paragraph words",
 };
+
+function displayMetricName(metric: AiStyleMetric) {
+  return metric.profile_metric_id === "type_token_ratio"
+    ? "Vocabulary type-token ratio (TTR)"
+    : metric.metric_name;
+}
 
 function toIndexedValue(value: number, profileCentre: number) {
   if (!Number.isFinite(value) || !Number.isFinite(profileCentre) || profileCentre === 0) {
@@ -78,7 +84,7 @@ function buildChartData(analysis: StyleAnalysis, scope: AiProfileScope, selected
       const profileCentre = getProfileCentre(metric);
       return {
         label: shortMetricLabels[metric.profile_metric_id] ?? metric.metric_name,
-        fullLabel: metric.metric_name,
+        fullLabel: displayMetricName(metric),
         submitted: toIndexedValue(submitted, profileCentre),
         profile: 100,
         submittedActual: submitted,

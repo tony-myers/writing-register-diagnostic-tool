@@ -428,6 +428,17 @@ textarea {
   color: var(--text);
 }
 
+.ai-methods-link {
+  margin-top: 8px;
+}
+
+.ai-methods-link a {
+  color: var(--accent-blue);
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .ai-profile-table-wrap {
   overflow-x: auto;
 }
@@ -807,6 +818,48 @@ thead th {
 
 tbody th {
   font-weight: 650;
+}
+
+.metric-help-text {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.metric-definitions {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.metric-definitions summary {
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.metric-definitions > p {
+  margin: 8px 0 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.metric-definitions dl {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.metric-definitions dt {
+  font-weight: 750;
+}
+
+.metric-definitions dd {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .flagged-row {

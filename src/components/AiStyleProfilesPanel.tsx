@@ -36,6 +36,12 @@ const metricOrder = [
   "sentence_length_sd_random_slope",
 ];
 
+const ttrFullDefinition =
+  "Type-token ratio (TTR) is a simple measure of lexical diversity. It is calculated as the number of unique word types divided by the total number of word tokens. Higher values indicate more varied vocabulary, but TTR is sensitive to text length because longer texts naturally reuse more words. Interpret it as a contextual metric, not as a quality score.";
+
+const aiProfileMethodsUrl =
+  "https://tony-myers.github.io/AI-for-education/writing-register-profile-methods.html";
+
 function formatInterval({ lower, upper }: { lower: number; upper: number }, digits: number) {
   return `${formatNumber(lower, digits)} to ${formatNumber(upper, digits)}`;
 }
@@ -48,6 +54,18 @@ function sortMetrics(metrics: AiStyleMetric[]) {
   return [...metrics].sort(
     (a, b) => metricOrder.indexOf(a.profile_metric_id) - metricOrder.indexOf(b.profile_metric_id),
   );
+}
+
+function displayMetricName(metric: AiStyleMetric) {
+  return metric.profile_metric_id === "type_token_ratio"
+    ? "Vocabulary type-token ratio (TTR)"
+    : metric.metric_name;
+}
+
+function metricHelpText(metric: AiStyleMetric) {
+  return metric.profile_metric_id === "type_token_ratio"
+    ? "Unique word forms divided by total words; length-sensitive."
+    : null;
 }
 
 function submittedValueFor(metric: AiStyleMetric, analysis: StyleAnalysis): number | null {
@@ -82,7 +100,10 @@ function MetricRows({
             return (
               <tr key={`${metric.profile_metric_id}-${metric.structure_id}`}>
                 <th scope="row">
-                  <span>{metric.metric_name}</span>
+                  <span>{displayMetricName(metric)}</span>
+                  {metricHelpText(metric) && (
+                    <small className="metric-help-text">{metricHelpText(metric)}</small>
+                  )}
                   <small>
                     {metric.display_tier.replaceAll("_", " ")}
                     {"; "}
@@ -138,6 +159,11 @@ export function AiStyleProfilesPanel({
         <div>
           <h2 id="ai-style-profile-heading">AI-style comparison profile</h2>
           <p>{aiStyleNonDetectionWording}</p>
+          <p className="ai-methods-link">
+            <a href={aiProfileMethodsUrl} target="_blank" rel="noreferrer">
+              How the AI-style comparison profiles were constructed
+            </a>
+          </p>
         </div>
         <label className="ai-scope-control">
           <span>Reference set</span>
@@ -175,6 +201,9 @@ export function AiStyleProfilesPanel({
             These metrics are useful context, but they are length-sensitive or otherwise less
             suitable as primary public style benchmarks.
           </p>
+          {contextualMetrics.some((metric) => metric.profile_metric_id === "type_token_ratio") && (
+            <p>{ttrFullDefinition}</p>
+          )}
           <MetricRows analysis={analysis} metrics={contextualMetrics} />
         </details>
       )}
