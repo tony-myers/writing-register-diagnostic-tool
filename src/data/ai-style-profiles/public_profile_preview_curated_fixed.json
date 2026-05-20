@@ -1,0 +1,2356 @@
+{
+  "preview_only": true,
+  "date_generated": "2026-05-19T14:34:56+0100",
+  "recommended_default_reference_scope": "cloud_frontier",
+  "optional_reference_scope": "all_models",
+  "optional_reference_scope_caution": "all_models is a broader exploratory reference set, not necessarily a stronger benchmark.",
+  "non_detection_wording": "These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+  "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+  "public_display_tiers": [
+    "primary_default",
+    "contextual_with_caution",
+    "advanced_or_exploratory",
+    "hidden_from_default"
+  ],
+  "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+  "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+  "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+  "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+  "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+  "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+  "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+  "profiles": [
+    {
+      "profile_id": "curated_pre_export_ai_style_cloud_frontier_A",
+      "display_name": "Curated pre-export AI-style benchmark - cloud_frontier - Academic explanatory / argumentative",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "cloud_frontier",
+      "reference_scope_role": "recommended_public_default_reference",
+      "task_code": "A",
+      "task_label": "Academic explanatory / argumentative",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 13.99815773,
+          "posterior_epred": {
+            "median": 13.99815773,
+            "mean": 14.10025169,
+            "interval_50": {
+              "lower": 12.39226733,
+              "upper": 15.65592241
+            },
+            "interval_90": {
+              "lower": 10.27744216,
+              "upper": 18.34657542
+            }
+          },
+          "posterior_predict": {
+            "median": 11,
+            "mean": 14.104625,
+            "interval_50": {
+              "lower": 5,
+              "upper": 20
+            },
+            "interval_90": {
+              "lower": 1,
+              "upper": 37
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0025; min_bulk_ESS=1977.6837; min_tail_ESS=2510.2427; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-145.3105; delta_from_best_acceptable=-0.5108; max_Pareto_k=0.2993; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as percentage of sentences opening with articles.",
+          "rationale": "Article opener rate is task-sensitive, bounded, interpretable, and diagnostically stable in the tuned comparison.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 16.51054693,
+          "posterior_epred": {
+            "median": 16.51054693,
+            "mean": 16.64434465,
+            "interval_50": {
+              "lower": 15.21045381,
+              "upper": 17.93087678
+            },
+            "interval_90": {
+              "lower": 13.49457507,
+              "upper": 20.1742535
+            }
+          },
+          "posterior_predict": {
+            "median": 15,
+            "mean": 16.6223125,
+            "interval_50": {
+              "lower": 11,
+              "upper": 21
+            },
+            "interval_90": {
+              "lower": 5,
+              "upper": 32
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2007.8438; min_tail_ESS=3056.1889; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-175.7311; delta_from_best_acceptable=-0.0268; max_Pareto_k=0.3558; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as hedges per 1,000 words.",
+          "rationale": "Hedge rate is directly interpretable on a stable exposure scale and is one of the stronger public-facing style metrics.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 7.77522574,
+          "posterior_epred": {
+            "median": 7.77522574,
+            "mean": 7.77702612,
+            "interval_50": {
+              "lower": 7.47855632,
+              "upper": 8.0759884
+            },
+            "interval_90": {
+              "lower": 7.04171821,
+              "upper": 8.5110252
+            }
+          },
+          "posterior_predict": {
+            "median": 7.76551225,
+            "mean": 7.78498997,
+            "interval_50": {
+              "lower": 6.18091075,
+              "upper": 9.37323537
+            },
+            "interval_90": {
+              "lower": 3.88861124,
+              "upper": 11.74666715
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0031; min_bulk_ESS=2052.0811; min_tail_ESS=2893.9658; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-167.3965; delta_from_best_acceptable=0; max_Pareto_k=0.3417; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark using the simpler partial-pooling intercept structure.",
+          "rationale": "Sentence length SD uses the simpler partial-pooling intercept model for default presentation to avoid overinterpreting model-specific task effects.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.45887656,
+          "posterior_epred": {
+            "median": 0.45887656,
+            "mean": 0.45919029,
+            "interval_50": {
+              "lower": 0.43571964,
+              "upper": 0.48204763
+            },
+            "interval_90": {
+              "lower": 0.4057722,
+              "upper": 0.51403503
+            }
+          },
+          "posterior_predict": {
+            "median": 0.4575592,
+            "mean": 0.45923019,
+            "interval_50": {
+              "lower": 0.42526935,
+              "upper": 0.49148136
+            },
+            "interval_90": {
+              "lower": 0.38055046,
+              "upper": 0.54245338
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0054; min_bulk_ESS=1700.693; min_tail_ESS=2230.9785; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=151.4359; delta_from_best_acceptable=0; max_Pareto_k=0.3939; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is informative but strongly affected by text length, so it should support interpretation rather than drive public profile comparison.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 123.10998246,
+          "posterior_epred": {
+            "median": 123.10998246,
+            "mean": 123.09278778,
+            "interval_50": {
+              "lower": 116.86036164,
+              "upper": 129.36407541
+            },
+            "interval_90": {
+              "lower": 107.87265112,
+              "upper": 138.24620925
+            }
+          },
+          "posterior_predict": {
+            "median": 122.53625548,
+            "mean": 123.13031072,
+            "interval_50": {
+              "lower": 111.69291357,
+              "upper": 134.27671029
+            },
+            "interval_90": {
+              "lower": 96.62547823,
+              "upper": 151.19993673
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0015; min_bulk_ESS=2477.0433; min_tail_ESS=3056.952; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-291.4887; delta_from_best_acceptable=0; max_Pareto_k=0.4864; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; retain as contextual information with caution, not as a primary public default.",
+          "rationale": "Paragraph mean words is useful context but depends heavily on output length and formatting.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_cloud_frontier_B",
+      "display_name": "Curated pre-export AI-style benchmark - cloud_frontier - Empirical summary",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "cloud_frontier",
+      "reference_scope_role": "recommended_public_default_reference",
+      "task_code": "B",
+      "task_label": "Empirical summary",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 32.85072983,
+          "posterior_epred": {
+            "median": 32.85072983,
+            "mean": 32.97653145,
+            "interval_50": {
+              "lower": 30.17712558,
+              "upper": 35.69538842
+            },
+            "interval_90": {
+              "lower": 26.24783042,
+              "upper": 39.8673837
+            }
+          },
+          "posterior_predict": {
+            "median": 32,
+            "mean": 32.98146875,
+            "interval_50": {
+              "lower": 21,
+              "upper": 44
+            },
+            "interval_90": {
+              "lower": 9,
+              "upper": 62
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0025; min_bulk_ESS=1977.6837; min_tail_ESS=2510.2427; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-145.3105; delta_from_best_acceptable=-0.5108; max_Pareto_k=0.2993; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as percentage of sentences opening with articles.",
+          "rationale": "Article opener rate is task-sensitive, bounded, interpretable, and diagnostically stable in the tuned comparison.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 19.23813699,
+          "posterior_epred": {
+            "median": 19.23813699,
+            "mean": 19.39502774,
+            "interval_50": {
+              "lower": 17.60774528,
+              "upper": 21.01329495
+            },
+            "interval_90": {
+              "lower": 15.49598485,
+              "upper": 23.87185144
+            }
+          },
+          "posterior_predict": {
+            "median": 18,
+            "mean": 19.39784375,
+            "interval_50": {
+              "lower": 12,
+              "upper": 25
+            },
+            "interval_90": {
+              "lower": 6,
+              "upper": 37
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2007.8438; min_tail_ESS=3056.1889; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-175.7311; delta_from_best_acceptable=-0.0268; max_Pareto_k=0.3558; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as hedges per 1,000 words.",
+          "rationale": "Hedge rate is directly interpretable on a stable exposure scale and is one of the stronger public-facing style metrics.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 8.74264082,
+          "posterior_epred": {
+            "median": 8.74264082,
+            "mean": 8.74426224,
+            "interval_50": {
+              "lower": 8.41829619,
+              "upper": 9.06866435
+            },
+            "interval_90": {
+              "lower": 7.93550425,
+              "upper": 9.56504917
+            }
+          },
+          "posterior_predict": {
+            "median": 8.74010065,
+            "mean": 8.75600741,
+            "interval_50": {
+              "lower": 7.16159976,
+              "upper": 10.35404471
+            },
+            "interval_90": {
+              "lower": 4.85342973,
+              "upper": 12.69872402
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0031; min_bulk_ESS=2052.0811; min_tail_ESS=2893.9658; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-167.3965; delta_from_best_acceptable=0; max_Pareto_k=0.3417; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark using the simpler partial-pooling intercept structure.",
+          "rationale": "Sentence length SD uses the simpler partial-pooling intercept model for default presentation to avoid overinterpreting model-specific task effects.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.42365813,
+          "posterior_epred": {
+            "median": 0.42365813,
+            "mean": 0.42436329,
+            "interval_50": {
+              "lower": 0.40024043,
+              "upper": 0.44758959
+            },
+            "interval_90": {
+              "lower": 0.36885115,
+              "upper": 0.48141659
+            }
+          },
+          "posterior_predict": {
+            "median": 0.4232458,
+            "mean": 0.42440642,
+            "interval_50": {
+              "lower": 0.39044284,
+              "upper": 0.45644115
+            },
+            "interval_90": {
+              "lower": 0.34393532,
+              "upper": 0.50938587
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0054; min_bulk_ESS=1700.693; min_tail_ESS=2230.9785; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=151.4359; delta_from_best_acceptable=0; max_Pareto_k=0.3939; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is informative but strongly affected by text length, so it should support interpretation rather than drive public profile comparison.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 118.75022644,
+          "posterior_epred": {
+            "median": 118.75022644,
+            "mean": 118.80365673,
+            "interval_50": {
+              "lower": 112.18724322,
+              "upper": 125.25723507
+            },
+            "interval_90": {
+              "lower": 102.94202806,
+              "upper": 134.5184229
+            }
+          },
+          "posterior_predict": {
+            "median": 118.29568827,
+            "mean": 118.82044118,
+            "interval_50": {
+              "lower": 107.19309025,
+              "upper": 130.18631425
+            },
+            "interval_90": {
+              "lower": 91.93864567,
+              "upper": 147.46096135
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0015; min_bulk_ESS=2477.0433; min_tail_ESS=3056.952; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-291.4887; delta_from_best_acceptable=0; max_Pareto_k=0.4864; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; retain as contextual information with caution, not as a primary public default.",
+          "rationale": "Paragraph mean words is useful context but depends heavily on output length and formatting.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_cloud_frontier_C",
+      "display_name": "Curated pre-export AI-style benchmark - cloud_frontier - Feedback / evaluative",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "cloud_frontier",
+      "reference_scope_role": "recommended_public_default_reference",
+      "task_code": "C",
+      "task_label": "Feedback / evaluative",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 17.04026835,
+          "posterior_epred": {
+            "median": 17.04026835,
+            "mean": 17.14702621,
+            "interval_50": {
+              "lower": 15.12539112,
+              "upper": 19.05704428
+            },
+            "interval_90": {
+              "lower": 12.61350927,
+              "upper": 22.03501804
+            }
+          },
+          "posterior_predict": {
+            "median": 15,
+            "mean": 17.240625,
+            "interval_50": {
+              "lower": 7,
+              "upper": 25
+            },
+            "interval_90": {
+              "lower": 2,
+              "upper": 42
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0025; min_bulk_ESS=1977.6837; min_tail_ESS=2510.2427; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-145.3105; delta_from_best_acceptable=-0.5108; max_Pareto_k=0.2993; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as percentage of sentences opening with articles.",
+          "rationale": "Article opener rate is task-sensitive, bounded, interpretable, and diagnostically stable in the tuned comparison.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 17.24112716,
+          "posterior_epred": {
+            "median": 17.24112716,
+            "mean": 17.37819959,
+            "interval_50": {
+              "lower": 15.80073958,
+              "upper": 18.78141718
+            },
+            "interval_90": {
+              "lower": 13.93315047,
+              "upper": 21.33957463
+            }
+          },
+          "posterior_predict": {
+            "median": 16,
+            "mean": 17.4115625,
+            "interval_50": {
+              "lower": 11,
+              "upper": 22
+            },
+            "interval_90": {
+              "lower": 6,
+              "upper": 34
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2007.8438; min_tail_ESS=3056.1889; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-175.7311; delta_from_best_acceptable=-0.0268; max_Pareto_k=0.3558; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as hedges per 1,000 words.",
+          "rationale": "Hedge rate is directly interpretable on a stable exposure scale and is one of the stronger public-facing style metrics.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 7.71069435,
+          "posterior_epred": {
+            "median": 7.71069435,
+            "mean": 7.71526201,
+            "interval_50": {
+              "lower": 7.44245576,
+              "upper": 7.99505386
+            },
+            "interval_90": {
+              "lower": 7.01586472,
+              "upper": 8.40690433
+            }
+          },
+          "posterior_predict": {
+            "median": 7.73793425,
+            "mean": 7.74006921,
+            "interval_50": {
+              "lower": 6.1428776,
+              "upper": 9.32851684
+            },
+            "interval_90": {
+              "lower": 3.81527901,
+              "upper": 11.69704939
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0031; min_bulk_ESS=2052.0811; min_tail_ESS=2893.9658; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-167.3965; delta_from_best_acceptable=0; max_Pareto_k=0.3417; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark using the simpler partial-pooling intercept structure.",
+          "rationale": "Sentence length SD uses the simpler partial-pooling intercept model for default presentation to avoid overinterpreting model-specific task effects.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.41290895,
+          "posterior_epred": {
+            "median": 0.41290895,
+            "mean": 0.4132965,
+            "interval_50": {
+              "lower": 0.38771491,
+              "upper": 0.43859371
+            },
+            "interval_90": {
+              "lower": 0.3539232,
+              "upper": 0.47356064
+            }
+          },
+          "posterior_predict": {
+            "median": 0.41168122,
+            "mean": 0.41309988,
+            "interval_50": {
+              "lower": 0.37755601,
+              "upper": 0.44680263
+            },
+            "interval_90": {
+              "lower": 0.33114919,
+              "upper": 0.49959122
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0054; min_bulk_ESS=1700.693; min_tail_ESS=2230.9785; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=151.4359; delta_from_best_acceptable=0; max_Pareto_k=0.3939; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is informative but strongly affected by text length, so it should support interpretation rather than drive public profile comparison.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 109.87764429,
+          "posterior_epred": {
+            "median": 109.87764429,
+            "mean": 109.88251228,
+            "interval_50": {
+              "lower": 102.89347866,
+              "upper": 116.80748865
+            },
+            "interval_90": {
+              "lower": 93.01490703,
+              "upper": 126.68753492
+            }
+          },
+          "posterior_predict": {
+            "median": 109.34007826,
+            "mean": 109.85595819,
+            "interval_50": {
+              "lower": 97.92735047,
+              "upper": 121.42372872
+            },
+            "interval_90": {
+              "lower": 82.17517953,
+              "upper": 139.43971145
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0015; min_bulk_ESS=2477.0433; min_tail_ESS=3056.952; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-291.4887; delta_from_best_acceptable=0; max_Pareto_k=0.4864; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; retain as contextual information with caution, not as a primary public default.",
+          "rationale": "Paragraph mean words is useful context but depends heavily on output length and formatting.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_cloud_frontier_D",
+      "display_name": "Curated pre-export AI-style benchmark - cloud_frontier - Professional email",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "cloud_frontier",
+      "reference_scope_role": "recommended_public_default_reference",
+      "task_code": "D",
+      "task_label": "Professional email",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 15.94250121,
+          "posterior_epred": {
+            "median": 15.94250121,
+            "mean": 16.07998393,
+            "interval_50": {
+              "lower": 13.95310358,
+              "upper": 17.99591313
+            },
+            "interval_90": {
+              "lower": 11.57689377,
+              "upper": 21.18813161
+            }
+          },
+          "posterior_predict": {
+            "median": 14,
+            "mean": 16.0849375,
+            "interval_50": {
+              "lower": 7,
+              "upper": 23
+            },
+            "interval_90": {
+              "lower": 1,
+              "upper": 40
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0025; min_bulk_ESS=1977.6837; min_tail_ESS=2510.2427; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-145.3105; delta_from_best_acceptable=-0.5108; max_Pareto_k=0.2993; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as percentage of sentences opening with articles.",
+          "rationale": "Article opener rate is task-sensitive, bounded, interpretable, and diagnostically stable in the tuned comparison.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 10.11996029,
+          "posterior_epred": {
+            "median": 10.11996029,
+            "mean": 10.22038182,
+            "interval_50": {
+              "lower": 9.09328929,
+              "upper": 11.20017811
+            },
+            "interval_90": {
+              "lower": 7.74775639,
+              "upper": 13.11674333
+            }
+          },
+          "posterior_predict": {
+            "median": 9,
+            "mean": 10.2065625,
+            "interval_50": {
+              "lower": 6,
+              "upper": 13
+            },
+            "interval_90": {
+              "lower": 3,
+              "upper": 21
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2007.8438; min_tail_ESS=3056.1889; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-175.7311; delta_from_best_acceptable=-0.0268; max_Pareto_k=0.3558; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark. Interpretable as hedges per 1,000 words.",
+          "rationale": "Hedge rate is directly interpretable on a stable exposure scale and is one of the stronger public-facing style metrics.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": true,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 7.54910549,
+          "posterior_epred": {
+            "median": 7.54910549,
+            "mean": 7.55516613,
+            "interval_50": {
+              "lower": 7.25690355,
+              "upper": 7.84811764
+            },
+            "interval_90": {
+              "lower": 6.83612213,
+              "upper": 8.28616149
+            }
+          },
+          "posterior_predict": {
+            "median": 7.5397378,
+            "mean": 7.55618969,
+            "interval_50": {
+              "lower": 5.97483122,
+              "upper": 9.14112051
+            },
+            "interval_90": {
+              "lower": 3.64082908,
+              "upper": 11.49976104
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0031; min_bulk_ESS=2052.0811; min_tail_ESS=2893.9658; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-167.3965; delta_from_best_acceptable=0; max_Pareto_k=0.3417; bad_Pareto_k=0",
+          "caution": "Primary public style benchmark using the simpler partial-pooling intercept structure.",
+          "rationale": "Sentence length SD uses the simpler partial-pooling intercept model for default presentation to avoid overinterpreting model-specific task effects.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.40441289,
+          "posterior_epred": {
+            "median": 0.40441289,
+            "mean": 0.40481734,
+            "interval_50": {
+              "lower": 0.37651273,
+              "upper": 0.43193017
+            },
+            "interval_90": {
+              "lower": 0.33953432,
+              "upper": 0.47255351
+            }
+          },
+          "posterior_predict": {
+            "median": 0.40367747,
+            "mean": 0.4049426,
+            "interval_50": {
+              "lower": 0.36786802,
+              "upper": 0.43987203
+            },
+            "interval_90": {
+              "lower": 0.31795905,
+              "upper": 0.49773773
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0054; min_bulk_ESS=1700.693; min_tail_ESS=2230.9785; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=151.4359; delta_from_best_acceptable=0; max_Pareto_k=0.3939; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is informative but strongly affected by text length, so it should support interpretation rather than drive public profile comparison.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "recommended_public_default_reference",
+          "advanced_or_exploratory": false,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 99.48708936,
+          "posterior_epred": {
+            "median": 99.48708936,
+            "mean": 99.43721116,
+            "interval_50": {
+              "lower": 91.8593066,
+              "upper": 106.96939723
+            },
+            "interval_90": {
+              "lower": 80.95799215,
+              "upper": 117.70577309
+            }
+          },
+          "posterior_predict": {
+            "median": 98.97822417,
+            "mean": 99.50303115,
+            "interval_50": {
+              "lower": 87.33993954,
+              "upper": 111.44788232
+            },
+            "interval_90": {
+              "lower": 70.97655167,
+              "upper": 129.5499521
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/cloud_frontier__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0015; min_bulk_ESS=2477.0433; min_tail_ESS=3056.952; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-291.4887; delta_from_best_acceptable=0; max_Pareto_k=0.4864; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; retain as contextual information with caution, not as a primary public default.",
+          "rationale": "Paragraph mean words is useful context but depends heavily on output length and formatting.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_all_models_A",
+      "display_name": "Curated pre-export AI-style benchmark - all_models - Academic explanatory / argumentative",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "all_models",
+      "reference_scope_role": "optional_broader_exploratory_reference",
+      "task_code": "A",
+      "task_label": "Academic explanatory / argumentative",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 11.93549038,
+          "posterior_epred": {
+            "median": 11.93549038,
+            "mean": 11.99479788,
+            "interval_50": {
+              "lower": 10.77988468,
+              "upper": 13.12445718
+            },
+            "interval_90": {
+              "lower": 9.2145504,
+              "upper": 15.00118405
+            }
+          },
+          "posterior_predict": {
+            "median": 10,
+            "mean": 11.95407143,
+            "interval_50": {
+              "lower": 5,
+              "upper": 17
+            },
+            "interval_90": {
+              "lower": 1,
+              "upper": 31
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0018; min_bulk_ESS=1798.5493; min_tail_ESS=1905.2769; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-234.9416; delta_from_best_acceptable=-0.5033; max_Pareto_k=0.3111; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Article opener remains interpretable in the broader set, but the broader set is optional context rather than the recommended public default.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 17.59085979,
+          "posterior_epred": {
+            "median": 17.59085979,
+            "mean": 17.65256045,
+            "interval_50": {
+              "lower": 16.55463536,
+              "upper": 18.68738367
+            },
+            "interval_90": {
+              "lower": 15.1086007,
+              "upper": 20.45838419
+            }
+          },
+          "posterior_predict": {
+            "median": 17,
+            "mean": 17.69930357,
+            "interval_50": {
+              "lower": 12,
+              "upper": 22
+            },
+            "interval_90": {
+              "lower": 7,
+              "upper": 33
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0021; min_bulk_ESS=2616.5255; min_tail_ESS=4026.2559; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-299.7602; delta_from_best_acceptable=0; max_Pareto_k=0.4252; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Hedge rate remains interpretable in the broader set, but the broader set should be presented as exploratory context.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 7.46841697,
+          "posterior_epred": {
+            "median": 7.46841697,
+            "mean": 7.47901625,
+            "interval_50": {
+              "lower": 7.25465923,
+              "upper": 7.700109
+            },
+            "interval_90": {
+              "lower": 6.9590753,
+              "upper": 8.02662005
+            }
+          },
+          "posterior_predict": {
+            "median": 7.46151447,
+            "mean": 7.46857236,
+            "interval_50": {
+              "lower": 5.95381327,
+              "upper": 8.96627648
+            },
+            "interval_90": {
+              "lower": 3.54395783,
+              "upper": 11.43943897
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2128.8257; min_tail_ESS=3222.1035; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-307.7268; delta_from_best_acceptable=0; max_Pareto_k=0.627; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference using the simpler partial-pooling intercept model for default presentation.",
+          "rationale": "The simpler partial-pooling intercept model is preferred for public display; it avoids making the random-slope sensitivity model the default benchmark.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd_random_slope",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD (random-slope sensitivity)",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "advanced_or_exploratory",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 9.41865027,
+          "posterior_epred": {
+            "median": 9.41865027,
+            "mean": 9.39335119,
+            "interval_50": {
+              "lower": 8.4216656,
+              "upper": 10.42454991
+            },
+            "interval_90": {
+              "lower": 6.81195448,
+              "upper": 11.86973708
+            }
+          },
+          "posterior_predict": {
+            "median": 9.40383351,
+            "mean": 9.37945706,
+            "interval_50": {
+              "lower": 7.77751782,
+              "upper": 11.0373003
+            },
+            "interval_90": {
+              "lower": 5.00465968,
+              "upper": 13.82543142
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_task_slope_length",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + log_word_count + (1 + task_code | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_task_slope_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0026; min_bulk_ESS=1177.6465; min_tail_ESS=1845.7366; divergences=0; treedepth_hits=0",
+          "loo_summary": "LOO warning: do not use mechanically; max_Pareto_k=0.8641; bad_Pareto_k=1",
+          "caution": "Advanced sensitivity result only. Pareto-k warning remains; high Pareto-k LOO results should not be used mechanically for model choice.",
+          "rationale": "Retained only for expert review because the tuned comparison selected it as informative but retained a Pareto-k warning.",
+          "export_status": "advanced_or_exploratory_with_caution"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.45319784,
+          "posterior_epred": {
+            "median": 0.45319784,
+            "mean": 0.45368855,
+            "interval_50": {
+              "lower": 0.43262371,
+              "upper": 0.4746951
+            },
+            "interval_90": {
+              "lower": 0.40268184,
+              "upper": 0.50470685
+            }
+          },
+          "posterior_predict": {
+            "median": 0.45138324,
+            "mean": 0.45349224,
+            "interval_50": {
+              "lower": 0.41865783,
+              "upper": 0.48583253
+            },
+            "interval_90": {
+              "lower": 0.37256017,
+              "upper": 0.54230426
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0035; min_bulk_ESS=1682.3267; min_tail_ESS=2620.2376; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=268.1835; delta_from_best_acceptable=0; max_Pareto_k=0.3366; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is retained as contextual lexical-diversity information, not a primary public benchmark.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "hidden_from_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 223.10210489,
+          "posterior_epred": {
+            "median": 223.10210489,
+            "mean": 214.48852441,
+            "interval_50": {
+              "lower": 199.03359683,
+              "upper": 228.50051415
+            },
+            "interval_90": {
+              "lower": 179.17269573,
+              "upper": 233.40342226
+            }
+          },
+          "posterior_predict": {
+            "median": 192.01549735,
+            "mean": 217.66811855,
+            "interval_50": {
+              "lower": 159.28429134,
+              "upper": 286.83524076
+            },
+            "interval_90": {
+              "lower": 128.64412406,
+              "upper": 347.87581004
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0099; min_bulk_ESS=493.9659; min_tail_ESS=1507.8864; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-570.6171; delta_from_best_acceptable=0; max_Pareto_k=0.2188; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; task-level differences in the broader model set largely disappear after adjusting for total output length.",
+          "rationale": "Do not present as a public task-level benchmark for all_models; keep pooled or contextual only because the task profile is near-flat after length adjustment.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_all_models_B",
+      "display_name": "Curated pre-export AI-style benchmark - all_models - Empirical summary",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "all_models",
+      "reference_scope_role": "optional_broader_exploratory_reference",
+      "task_code": "B",
+      "task_label": "Empirical summary",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 32.32372013,
+          "posterior_epred": {
+            "median": 32.32372013,
+            "mean": 32.39200649,
+            "interval_50": {
+              "lower": 30.34575701,
+              "upper": 34.35247807
+            },
+            "interval_90": {
+              "lower": 27.59328543,
+              "upper": 37.46138633
+            }
+          },
+          "posterior_predict": {
+            "median": 31,
+            "mean": 32.39096429,
+            "interval_50": {
+              "lower": 22,
+              "upper": 42
+            },
+            "interval_90": {
+              "lower": 11,
+              "upper": 58
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0018; min_bulk_ESS=1798.5493; min_tail_ESS=1905.2769; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-234.9416; delta_from_best_acceptable=-0.5033; max_Pareto_k=0.3111; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Article opener remains interpretable in the broader set, but the broader set is optional context rather than the recommended public default.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 19.25248985,
+          "posterior_epred": {
+            "median": 19.25248985,
+            "mean": 19.31873515,
+            "interval_50": {
+              "lower": 18.04186419,
+              "upper": 20.50616799
+            },
+            "interval_90": {
+              "lower": 16.36428053,
+              "upper": 22.47874504
+            }
+          },
+          "posterior_predict": {
+            "median": 18,
+            "mean": 19.373,
+            "interval_50": {
+              "lower": 13,
+              "upper": 24
+            },
+            "interval_90": {
+              "lower": 7,
+              "upper": 35
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0021; min_bulk_ESS=2616.5255; min_tail_ESS=4026.2559; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-299.7602; delta_from_best_acceptable=0; max_Pareto_k=0.4252; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Hedge rate remains interpretable in the broader set, but the broader set should be presented as exploratory context.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 8.18632564,
+          "posterior_epred": {
+            "median": 8.18632564,
+            "mean": 8.18863421,
+            "interval_50": {
+              "lower": 7.90339566,
+              "upper": 8.47495262
+            },
+            "interval_90": {
+              "lower": 7.50061685,
+              "upper": 8.88200069
+            }
+          },
+          "posterior_predict": {
+            "median": 8.18932446,
+            "mean": 8.20302445,
+            "interval_50": {
+              "lower": 6.67225529,
+              "upper": 9.70924366
+            },
+            "interval_90": {
+              "lower": 4.27538554,
+              "upper": 12.14861685
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2128.8257; min_tail_ESS=3222.1035; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-307.7268; delta_from_best_acceptable=0; max_Pareto_k=0.627; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference using the simpler partial-pooling intercept model for default presentation.",
+          "rationale": "The simpler partial-pooling intercept model is preferred for public display; it avoids making the random-slope sensitivity model the default benchmark.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd_random_slope",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD (random-slope sensitivity)",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "advanced_or_exploratory",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 9.82126964,
+          "posterior_epred": {
+            "median": 9.82126964,
+            "mean": 9.80574748,
+            "interval_50": {
+              "lower": 8.78366795,
+              "upper": 10.86537616
+            },
+            "interval_90": {
+              "lower": 7.17390819,
+              "upper": 12.36728423
+            }
+          },
+          "posterior_predict": {
+            "median": 9.8029667,
+            "mean": 9.82046533,
+            "interval_50": {
+              "lower": 8.11818308,
+              "upper": 11.51089097
+            },
+            "interval_90": {
+              "lower": 5.30676323,
+              "upper": 14.31570103
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_task_slope_length",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + log_word_count + (1 + task_code | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_task_slope_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0026; min_bulk_ESS=1177.6465; min_tail_ESS=1845.7366; divergences=0; treedepth_hits=0",
+          "loo_summary": "LOO warning: do not use mechanically; max_Pareto_k=0.8641; bad_Pareto_k=1",
+          "caution": "Advanced sensitivity result only. Pareto-k warning remains; high Pareto-k LOO results should not be used mechanically for model choice.",
+          "rationale": "Retained only for expert review because the tuned comparison selected it as informative but retained a Pareto-k warning.",
+          "export_status": "advanced_or_exploratory_with_caution"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.42862114,
+          "posterior_epred": {
+            "median": 0.42862114,
+            "mean": 0.42915203,
+            "interval_50": {
+              "lower": 0.40834519,
+              "upper": 0.45022042
+            },
+            "interval_90": {
+              "lower": 0.37826937,
+              "upper": 0.48066386
+            }
+          },
+          "posterior_predict": {
+            "median": 0.42672886,
+            "mean": 0.42907865,
+            "interval_50": {
+              "lower": 0.39392898,
+              "upper": 0.4620678
+            },
+            "interval_90": {
+              "lower": 0.34805192,
+              "upper": 0.51819696
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0035; min_bulk_ESS=1682.3267; min_tail_ESS=2620.2376; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=268.1835; delta_from_best_acceptable=0; max_Pareto_k=0.3366; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is retained as contextual lexical-diversity information, not a primary public benchmark.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "hidden_from_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 222.82751906,
+          "posterior_epred": {
+            "median": 222.82751906,
+            "mean": 213.96552067,
+            "interval_50": {
+              "lower": 198.04290137,
+              "upper": 228.46293585
+            },
+            "interval_90": {
+              "lower": 177.30493422,
+              "upper": 233.65046718
+            }
+          },
+          "posterior_predict": {
+            "median": 191.49614369,
+            "mean": 203.39165554,
+            "interval_50": {
+              "lower": 158.28463892,
+              "upper": 284.69366419
+            },
+            "interval_90": {
+              "lower": 127.25271083,
+              "upper": 347.96870943
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0099; min_bulk_ESS=493.9659; min_tail_ESS=1507.8864; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-570.6171; delta_from_best_acceptable=0; max_Pareto_k=0.2188; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; task-level differences in the broader model set largely disappear after adjusting for total output length.",
+          "rationale": "Do not present as a public task-level benchmark for all_models; keep pooled or contextual only because the task profile is near-flat after length adjustment.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_all_models_C",
+      "display_name": "Curated pre-export AI-style benchmark - all_models - Feedback / evaluative",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "all_models",
+      "reference_scope_role": "optional_broader_exploratory_reference",
+      "task_code": "C",
+      "task_label": "Feedback / evaluative",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 14.00372512,
+          "posterior_epred": {
+            "median": 14.00372512,
+            "mean": 14.07535943,
+            "interval_50": {
+              "lower": 12.70052254,
+              "upper": 15.39101073
+            },
+            "interval_90": {
+              "lower": 10.97966097,
+              "upper": 17.47154232
+            }
+          },
+          "posterior_predict": {
+            "median": 12,
+            "mean": 14.00823214,
+            "interval_50": {
+              "lower": 6,
+              "upper": 20
+            },
+            "interval_90": {
+              "lower": 1,
+              "upper": 34
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0018; min_bulk_ESS=1798.5493; min_tail_ESS=1905.2769; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-234.9416; delta_from_best_acceptable=-0.5033; max_Pareto_k=0.3111; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Article opener remains interpretable in the broader set, but the broader set is optional context rather than the recommended public default.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 16.75250107,
+          "posterior_epred": {
+            "median": 16.75250107,
+            "mean": 16.82274045,
+            "interval_50": {
+              "lower": 15.64834216,
+              "upper": 17.91847709
+            },
+            "interval_90": {
+              "lower": 14.19342624,
+              "upper": 19.72151589
+            }
+          },
+          "posterior_predict": {
+            "median": 16,
+            "mean": 16.89007143,
+            "interval_50": {
+              "lower": 11,
+              "upper": 21
+            },
+            "interval_90": {
+              "lower": 6,
+              "upper": 31
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0021; min_bulk_ESS=2616.5255; min_tail_ESS=4026.2559; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-299.7602; delta_from_best_acceptable=0; max_Pareto_k=0.4252; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Hedge rate remains interpretable in the broader set, but the broader set should be presented as exploratory context.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 7.79276132,
+          "posterior_epred": {
+            "median": 7.79276132,
+            "mean": 7.78896771,
+            "interval_50": {
+              "lower": 7.57847515,
+              "upper": 8.00406756
+            },
+            "interval_90": {
+              "lower": 7.25316462,
+              "upper": 8.31693361
+            }
+          },
+          "posterior_predict": {
+            "median": 7.77916515,
+            "mean": 7.78966449,
+            "interval_50": {
+              "lower": 6.28670516,
+              "upper": 9.28323252
+            },
+            "interval_90": {
+              "lower": 3.89660437,
+              "upper": 11.71540719
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2128.8257; min_tail_ESS=3222.1035; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-307.7268; delta_from_best_acceptable=0; max_Pareto_k=0.627; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference using the simpler partial-pooling intercept model for default presentation.",
+          "rationale": "The simpler partial-pooling intercept model is preferred for public display; it avoids making the random-slope sensitivity model the default benchmark.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd_random_slope",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD (random-slope sensitivity)",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "advanced_or_exploratory",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 9.9476562,
+          "posterior_epred": {
+            "median": 9.9476562,
+            "mean": 9.90683373,
+            "interval_50": {
+              "lower": 8.87742417,
+              "upper": 11.00599735
+            },
+            "interval_90": {
+              "lower": 7.15826333,
+              "upper": 12.49664993
+            }
+          },
+          "posterior_predict": {
+            "median": 9.92265147,
+            "mean": 9.92699945,
+            "interval_50": {
+              "lower": 8.11436524,
+              "upper": 11.75800694
+            },
+            "interval_90": {
+              "lower": 5.2014147,
+              "upper": 14.64555176
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_task_slope_length",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + log_word_count + (1 + task_code | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_task_slope_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0026; min_bulk_ESS=1177.6465; min_tail_ESS=1845.7366; divergences=0; treedepth_hits=0",
+          "loo_summary": "LOO warning: do not use mechanically; max_Pareto_k=0.8641; bad_Pareto_k=1",
+          "caution": "Advanced sensitivity result only. Pareto-k warning remains; high Pareto-k LOO results should not be used mechanically for model choice.",
+          "rationale": "Retained only for expert review because the tuned comparison selected it as informative but retained a Pareto-k warning.",
+          "export_status": "advanced_or_exploratory_with_caution"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.41276639,
+          "posterior_epred": {
+            "median": 0.41276639,
+            "mean": 0.41325088,
+            "interval_50": {
+              "lower": 0.39089223,
+              "upper": 0.43556681
+            },
+            "interval_90": {
+              "lower": 0.35880282,
+              "upper": 0.46766493
+            }
+          },
+          "posterior_predict": {
+            "median": 0.41099076,
+            "mean": 0.41340473,
+            "interval_50": {
+              "lower": 0.37730863,
+              "upper": 0.4471028
+            },
+            "interval_90": {
+              "lower": 0.33045066,
+              "upper": 0.50488288
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0035; min_bulk_ESS=1682.3267; min_tail_ESS=2620.2376; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=268.1835; delta_from_best_acceptable=0; max_Pareto_k=0.3366; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is retained as contextual lexical-diversity information, not a primary public benchmark.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "hidden_from_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 221.6491025,
+          "posterior_epred": {
+            "median": 221.6491025,
+            "mean": 211.65325966,
+            "interval_50": {
+              "lower": 193.62812107,
+              "upper": 227.95352897
+            },
+            "interval_90": {
+              "lower": 171.09735834,
+              "upper": 233.38781662
+            }
+          },
+          "posterior_predict": {
+            "median": 190.48275654,
+            "mean": 215.189573,
+            "interval_50": {
+              "lower": 155.9651556,
+              "upper": 279.54354867
+            },
+            "interval_90": {
+              "lower": 121.42687023,
+              "upper": 347.10679171
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0099; min_bulk_ESS=493.9659; min_tail_ESS=1507.8864; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-570.6171; delta_from_best_acceptable=0; max_Pareto_k=0.2188; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; task-level differences in the broader model set largely disappear after adjusting for total output length.",
+          "rationale": "Do not present as a public task-level benchmark for all_models; keep pooled or contextual only because the task profile is near-flat after length adjustment.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    },
+    {
+      "profile_id": "curated_pre_export_ai_style_all_models_D",
+      "display_name": "Curated pre-export AI-style benchmark - all_models - Professional email",
+      "profile_type": "curated_pre_export_preview_corpus_derived_ai_style_comparison",
+      "preview_only": true,
+      "corpus_scope": "all_models",
+      "reference_scope_role": "optional_broader_exploratory_reference",
+      "task_code": "D",
+      "task_label": "Professional email",
+      "date_generated": "2026-05-19T14:34:56+0100",
+      "source_review_csv": "private-analysis-not-published/analysis/pre_export_tuned_profiles_review.csv",
+      "source_validation_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation.csv",
+      "source_flags_csv": "private-analysis-not-published/analysis/pre_export_tuned_profile_validation_flags.csv",
+      "source_previous_preview_json": "private-analysis-not-published/analysis/pre_export_tuned_profiles_preview.json",
+      "source_model_comparison_csv": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.csv",
+      "source_model_comparison_report": "private-analysis-not-published/analysis/bayesian_second_pass_model_comparison.md",
+      "source_fit_directory": "private-analysis-not-published/fits_second_pass_final",
+      "provenance": "Curated from the tuned pre-export profile preview after manual policy decisions. This preview changes public display policy and swaps all_models sentence_length_sd default display to the simpler partial-pooling intercept fit; it does not fit new models or export final app JSON.",
+      "global_caution": "A document being close to this profile does not show that it was written by AI. A fully AI-generated document will not necessarily be close to this profile. Outputs vary by model, prompt, task, genre, editing and length. These profiles are corpus-derived AI-style comparison benchmarks. They are not AI detectors, not authorship classifiers, not plagiarism tools, and not universal averages of AI writing.",
+      "metrics": [
+        {
+          "profile_metric_id": "article_opener",
+          "source_metric_id": "article_opener",
+          "metric_name": "Article opener sentences (%)",
+          "app_metric_key": "article_opener_percentage",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 15.63694609,
+          "posterior_epred": {
+            "median": 15.63694609,
+            "mean": 15.71793831,
+            "interval_50": {
+              "lower": 14.2047951,
+              "upper": 17.10601393
+            },
+            "interval_90": {
+              "lower": 12.4191324,
+              "upper": 19.37306972
+            }
+          },
+          "posterior_predict": {
+            "median": 14,
+            "mean": 15.75369643,
+            "interval_50": {
+              "lower": 7,
+              "upper": 22
+            },
+            "interval_90": {
+              "lower": 2,
+              "upper": 37
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "percentage of sentences",
+          "model_family": "beta_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "article_opener_count | trials(sentence_count) ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__article_opener__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0018; min_bulk_ESS=1798.5493; min_tail_ESS=1905.2769; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-234.9416; delta_from_best_acceptable=-0.5033; max_Pareto_k=0.3111; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Article opener remains interpretable in the broader set, but the broader set is optional context rather than the recommended public default.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "hedge_rate",
+          "source_metric_id": "hedge_rate",
+          "metric_name": "Hedges per 1,000 words",
+          "app_metric_key": "hedges_per_1000",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 10.24319999,
+          "posterior_epred": {
+            "median": 10.24319999,
+            "mean": 10.30578702,
+            "interval_50": {
+              "lower": 9.43971547,
+              "upper": 11.10736517
+            },
+            "interval_90": {
+              "lower": 8.37030312,
+              "upper": 12.43021643
+            }
+          },
+          "posterior_predict": {
+            "median": 10,
+            "mean": 10.312,
+            "interval_50": {
+              "lower": 7,
+              "upper": 13
+            },
+            "interval_90": {
+              "lower": 3,
+              "upper": 20
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "per 1,000 words",
+          "model_family": "negative_binomial",
+          "structure_id": "pp_model_intercept",
+          "formula": "hedge_count ~ 1 + task_code + (1 | model) + offset(log(word_count/1000))",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__hedge_rate__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0021; min_bulk_ESS=2616.5255; min_tail_ESS=4026.2559; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-299.7602; delta_from_best_acceptable=0; max_Pareto_k=0.4252; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference only; not necessarily a stronger benchmark than cloud_frontier.",
+          "rationale": "Hedge rate remains interpretable in the broader set, but the broader set should be presented as exploratory context.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": true,
+          "display_tier": "primary_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 8.10481595,
+          "posterior_epred": {
+            "median": 8.10481595,
+            "mean": 8.1005981,
+            "interval_50": {
+              "lower": 7.84646924,
+              "upper": 8.34754362
+            },
+            "interval_90": {
+              "lower": 7.49183861,
+              "upper": 8.71485219
+            }
+          },
+          "posterior_predict": {
+            "median": 8.11441086,
+            "mean": 8.12316627,
+            "interval_50": {
+              "lower": 6.59558638,
+              "upper": 9.62476039
+            },
+            "interval_90": {
+              "lower": 4.1910757,
+              "upper": 12.06699528
+            }
+          },
+          "scale_for_distance": "posterior_predictive_scale_after_public_review",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_intercept.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0016; min_bulk_ESS=2128.8257; min_tail_ESS=3222.1035; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-307.7268; delta_from_best_acceptable=0; max_Pareto_k=0.627; bad_Pareto_k=0",
+          "caution": "Broader exploratory reference using the simpler partial-pooling intercept model for default presentation.",
+          "rationale": "The simpler partial-pooling intercept model is preferred for public display; it avoids making the random-slope sensitivity model the default benchmark.",
+          "export_status": "export_provisional"
+        },
+        {
+          "profile_metric_id": "sentence_length_sd_random_slope",
+          "source_metric_id": "sentence_length_sd",
+          "metric_name": "Sentence length SD (random-slope sensitivity)",
+          "app_metric_key": "sentence_length_sd_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "advanced_or_exploratory",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 10.39588459,
+          "posterior_epred": {
+            "median": 10.39588459,
+            "mean": 10.37792444,
+            "interval_50": {
+              "lower": 9.2956697,
+              "upper": 11.53425834
+            },
+            "interval_90": {
+              "lower": 7.45514831,
+              "upper": 13.11093268
+            }
+          },
+          "posterior_predict": {
+            "median": 10.44366368,
+            "mean": 10.37461836,
+            "interval_50": {
+              "lower": 8.55161002,
+              "upper": 12.26540504
+            },
+            "interval_90": {
+              "lower": 5.43006344,
+              "upper": 15.12827861
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_task_slope_length",
+          "formula": "sentence_length_sd_raw ~ 1 + task_code + log_word_count + (1 + task_code | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__sentence_length_sd__pp_model_task_slope_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0026; min_bulk_ESS=1177.6465; min_tail_ESS=1845.7366; divergences=0; treedepth_hits=0",
+          "loo_summary": "LOO warning: do not use mechanically; max_Pareto_k=0.8641; bad_Pareto_k=1",
+          "caution": "Advanced sensitivity result only. Pareto-k warning remains; high Pareto-k LOO results should not be used mechanically for model choice.",
+          "rationale": "Retained only for expert review because the tuned comparison selected it as informative but retained a Pareto-k warning.",
+          "export_status": "advanced_or_exploratory_with_caution"
+        },
+        {
+          "profile_metric_id": "type_token_ratio",
+          "source_metric_id": "type_token_ratio",
+          "metric_name": "Type-token ratio",
+          "app_metric_key": "type_token_ratio_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "contextual_with_caution",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": false,
+          "centre_type": "posterior_epred_median",
+          "centre": 0.4038606,
+          "posterior_epred": {
+            "median": 0.4038606,
+            "mean": 0.40440364,
+            "interval_50": {
+              "lower": 0.38107116,
+              "upper": 0.42810571
+            },
+            "interval_90": {
+              "lower": 0.34722418,
+              "upper": 0.46148244
+            }
+          },
+          "posterior_predict": {
+            "median": 0.40215457,
+            "mean": 0.40441036,
+            "interval_50": {
+              "lower": 0.36798774,
+              "upper": 0.43858078
+            },
+            "interval_90": {
+              "lower": 0.3197561,
+              "upper": 0.49715082
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "ratio",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "type_token_ratio_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__type_token_ratio__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0035; min_bulk_ESS=1682.3267; min_tail_ESS=2620.2376; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=268.1835; delta_from_best_acceptable=0; max_Pareto_k=0.3366; bad_Pareto_k=0",
+          "caution": "Length-sensitive; useful as a contextual lexical diversity indicator rather than a primary style benchmark.",
+          "rationale": "TTR is retained as contextual lexical-diversity information, not a primary public benchmark.",
+          "export_status": "export_with_caution"
+        },
+        {
+          "profile_metric_id": "paragraph_mean_words",
+          "source_metric_id": "paragraph_mean_words",
+          "metric_name": "Paragraph mean words",
+          "app_metric_key": "paragraph_mean_words_raw",
+          "public_default": false,
+          "public_default_metric": false,
+          "display_tier": "hidden_from_default",
+          "reference_scope_role": "optional_broader_exploratory_reference",
+          "advanced_or_exploratory": true,
+          "pooled_or_contextual": true,
+          "centre_type": "posterior_epred_median",
+          "centre": 221.25599689,
+          "posterior_epred": {
+            "median": 221.25599689,
+            "mean": 207.88345173,
+            "interval_50": {
+              "lower": 182.85352688,
+              "upper": 228.7572853
+            },
+            "interval_90": {
+              "lower": 157.29634051,
+              "upper": 235.15431428
+            }
+          },
+          "posterior_predict": {
+            "median": 190.22839624,
+            "mean": 205.61425177,
+            "interval_50": {
+              "lower": 152.4885005,
+              "upper": 268.4171043
+            },
+            "interval_90": {
+              "lower": 109.28574829,
+              "upper": 347.65175288
+            }
+          },
+          "scale_for_distance": "contextual_or_exploratory_review_only",
+          "unit": "words",
+          "model_family": "student",
+          "structure_id": "pp_model_intercept_length",
+          "formula": "paragraph_mean_words_raw ~ 1 + task_code + log_word_count + (1 | model)",
+          "fit_file": "private-analysis-not-published/fits_second_pass_final/all_models__paragraph_mean_words__pp_model_intercept_length.rds",
+          "diagnostics_summary": "diagnostics_passed=TRUE; max_Rhat=1.0099; min_bulk_ESS=493.9659; min_tail_ESS=1507.8864; divergences=0; treedepth_hits=0",
+          "loo_summary": "Reliable LOO: elpd_loo=-570.6171; delta_from_best_acceptable=0; max_Pareto_k=0.2188; bad_Pareto_k=0",
+          "caution": "Strongly length-dependent; task-level differences in the broader model set largely disappear after adjusting for total output length.",
+          "rationale": "Do not present as a public task-level benchmark for all_models; keep pooled or contextual only because the task profile is near-flat after length adjustment.",
+          "export_status": "export_with_caution"
+        }
+      ]
+    }
+  ]
+}
