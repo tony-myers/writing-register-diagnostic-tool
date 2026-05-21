@@ -57,15 +57,29 @@ function sortMetrics(metrics: AiStyleMetric[]) {
 }
 
 function displayMetricName(metric: AiStyleMetric) {
-  return metric.profile_metric_id === "type_token_ratio"
-    ? "Vocabulary TTR (unique word forms / total words)"
-    : metric.metric_name;
+  if (metric.profile_metric_id === "type_token_ratio") {
+    return "Vocabulary TTR (unique word forms / total words)";
+  }
+
+  if (metric.profile_metric_id === "sentence_length_sd_random_slope") {
+    return "Sentence length SD (sensitivity check)";
+  }
+
+  return metric.metric_name;
 }
 
 function metricHelpText(metric: AiStyleMetric) {
   return metric.profile_metric_id === "type_token_ratio"
     ? "Unique word forms divided by total counted words; not generative-AI tokenizer units."
     : null;
+}
+
+function displayCaution(metric: AiStyleMetric) {
+  if (metric.profile_metric_id === "sentence_length_sd_random_slope") {
+    return "Advanced sensitivity check only. This alternative estimate is shown for transparency; use the main sentence length SD result for ordinary comparison. Technical model-selection details are described in the methods page.";
+  }
+
+  return metric.caution;
 }
 
 function submittedValueFor(metric: AiStyleMetric, analysis: StyleAnalysis): number | null {
@@ -123,7 +137,7 @@ function MetricRows({
                 </td>
                 <td>
                   <strong>{band ? bandLabels[band] : "Not compared"}</strong>
-                  <small>{metric.caution}</small>
+                  <small>{displayCaution(metric)}</small>
                 </td>
               </tr>
             );
@@ -213,7 +227,8 @@ export function AiStyleProfilesPanel({
           <summary>Advanced exploratory sensitivity result</summary>
           <p>
             Advanced entries are retained for review and sensitivity comparison only. They are not
-            part of the default public view.
+            part of the default public view. The technical modelling details are described in the
+            methods page linked above.
           </p>
           <MetricRows analysis={analysis} metrics={advancedMetrics} />
         </details>
