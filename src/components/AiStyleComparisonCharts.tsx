@@ -42,13 +42,13 @@ const shortMetricLabels: Record<string, string> = {
   article_opener: "Article openers",
   hedge_rate: "Hedges",
   sentence_length_sd: "Sentence SD",
-  type_token_ratio: "Vocabulary ratio",
+  type_token_ratio: "Vocabulary TTR",
   paragraph_mean_words: "Paragraph words",
 };
 
 function displayMetricName(metric: AiStyleMetric) {
   return metric.profile_metric_id === "type_token_ratio"
-    ? "Vocabulary type-token ratio (TTR)"
+    ? "Vocabulary TTR (unique word forms / total words)"
     : metric.metric_name;
 }
 

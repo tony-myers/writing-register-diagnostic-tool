@@ -128,8 +128,8 @@ export const metricDefinitions: MetricDefinition[] = [
   },
   {
     key: "vocabularyTtr",
-    label: "Vocabulary type-token ratio",
-    shortLabel: "TTR",
+    label: "Vocabulary TTR (unique word forms / total words)",
+    shortLabel: "Vocab TTR",
     unit: "ratio",
     defaultTolerance: 0.06,
     weight: 0.5,

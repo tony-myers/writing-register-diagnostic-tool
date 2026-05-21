@@ -37,7 +37,7 @@ const metricOrder = [
 ];
 
 const ttrFullDefinition =
-  "Type-token ratio (TTR) is a simple measure of lexical diversity. It is calculated as the number of unique word types divided by the total number of word tokens. Higher values indicate more varied vocabulary, but TTR is sensitive to text length because longer texts naturally reuse more words. Interpret it as a contextual metric, not as a quality score.";
+  "Vocabulary type-token ratio (TTR) is calculated as unique word forms divided by total counted words. Here, 'token' means a word token in the text-analysis sense, not generative-AI tokenizer units. TTR is a simple lexical diversity measure, but it is sensitive to text length.";
 
 const aiProfileMethodsUrl =
   "https://tony-myers.github.io/AI-for-education/writing-register-profile-methods.html";
@@ -58,13 +58,13 @@ function sortMetrics(metrics: AiStyleMetric[]) {
 
 function displayMetricName(metric: AiStyleMetric) {
   return metric.profile_metric_id === "type_token_ratio"
-    ? "Vocabulary type-token ratio (TTR)"
+    ? "Vocabulary TTR (unique word forms / total words)"
     : metric.metric_name;
 }
 
 function metricHelpText(metric: AiStyleMetric) {
   return metric.profile_metric_id === "type_token_ratio"
-    ? "Unique word forms divided by total words; length-sensitive."
+    ? "Unique word forms divided by total counted words; not generative-AI tokenizer units."
     : null;
 }
 

@@ -23,9 +23,9 @@ const metricDefinitionItems = [
       "Standard deviation of sentence length in words. Higher values indicate more variation in sentence length; lower values indicate more even sentence lengths.",
   },
   {
-    name: "Vocabulary type-token ratio (TTR)",
+    name: "Vocabulary TTR (unique word forms / total words)",
     definition:
-      "Number of unique word types divided by total word tokens. Higher values indicate more varied vocabulary, but this metric is length-sensitive and should be interpreted cautiously.",
+      "Vocabulary type-token ratio (TTR) is calculated as unique word forms divided by total counted words. Here, 'token' means a word token in the text-analysis sense, not generative-AI tokenizer units. TTR is a simple lexical diversity measure, but it is sensitive to text length.",
   },
   {
     name: "Paragraph word length",
@@ -35,12 +35,14 @@ const metricDefinitionItems = [
 ];
 
 function displayMetricLabel(metric: (typeof metricDefinitions)[number]) {
-  return metric.key === "vocabularyTtr" ? "Vocabulary type-token ratio (TTR)" : metric.label;
+  return metric.key === "vocabularyTtr"
+    ? "Vocabulary TTR (unique word forms / total words)"
+    : metric.label;
 }
 
 function metricHelpText(metric: (typeof metricDefinitions)[number]) {
   return metric.key === "vocabularyTtr"
-    ? "Unique word forms divided by total words; length-sensitive."
+    ? "Unique word forms divided by total counted words; not generative-AI tokenizer units."
     : null;
 }
 
